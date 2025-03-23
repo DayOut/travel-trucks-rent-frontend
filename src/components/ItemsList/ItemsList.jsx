@@ -20,7 +20,7 @@ const ItemsList = (
   };
 
   const handleItemKeyDown = (e, item) => {
-    console.log("enter");
+    // console.log("enter");
     if (onKeyDown && (e.key === 'Enter' || e.key === ' ')) {
       e.preventDefault();
       onKeyDown(item);

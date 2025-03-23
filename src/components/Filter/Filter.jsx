@@ -9,7 +9,7 @@ import {
 } from "@/store/campers/selectors";
 import { selectLoading } from "@/store/campers/selectors";
 
-import {TextField, Button, Separator} from "@/components";
+import {TextField, Button} from "@/components";
 import FilterCategory from "./FiltersCategory/FilterCategory"
 
 import css from "./Filter.module.css";

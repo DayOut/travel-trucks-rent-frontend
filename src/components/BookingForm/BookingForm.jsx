@@ -122,7 +122,7 @@ const BookingForm = ({ className }) => {
 
     setIsLoading(false);
     actions.resetForm();
-    console.log('RESET');
+    // console.log('RESET');
     setSuccessfulSubmission(true);
   };
 

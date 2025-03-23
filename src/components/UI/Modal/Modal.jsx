@@ -14,7 +14,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         onClose();
       }
 
-      console.log(e.target);
+      // console.log(e.target);
     };
 
     if (isOpen) {

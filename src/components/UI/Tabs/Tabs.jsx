@@ -20,7 +20,7 @@ const Tabs = ({ tabs, active, onClick, onKeyDown, className }) => {
   };
 
   const handleItemKeyDown = (e, index) => {
-    console.log("enter");
+    // console.log("enter");
     if (onKeyDown && (e.key === 'Enter' || e.key === ' ')) {
       e.preventDefault();
       onKeyDown(tabs[index]);
