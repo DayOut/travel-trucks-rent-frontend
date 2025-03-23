@@ -13,14 +13,19 @@ const FilterItem = ({
   const name = group || id;
   const [field] = useField(name);
 
-  const isChecked = Array.isArray(field.value) && field.value.includes(id);
+  const isChecked = field.value === "true" || (Array.isArray(field.value) && field.value.includes(id));
 
   const handleClick = (e) => {
+    console.log("field.value", field.value);
       if (isChecked) {
-        setFieldValue(name, field.value.filter((item) => {
-          // console.log(item);
-          return item !== id;
-        }));
+        if (field.value instanceof Array) {
+          setFieldValue(name, field.value.filter((item) => {
+            // console.log(item);
+            return item !== id;
+          }));
+        } else {
+          setFieldValue(name, undefined);
+        }
       } else {
         if (field.value instanceof Array) {
           setFieldValue(name, [...(field.value || []), id]);
@@ -39,7 +44,7 @@ const FilterItem = ({
     type: single ? "radio" : "checkbox",
   };
 
-  // console.log("render FilterItem", id, "isChecked", isChecked, 'field.value', field.value, 'single', single);
+  console.log("render FilterItem", id, "isChecked", isChecked, 'field.value', field.value, 'single', single);
 
   return (
     <div
