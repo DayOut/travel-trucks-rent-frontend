@@ -1,43 +1,34 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Field, useField, useFormikContext } from "formik";
 import clsx from "clsx";
 import { Icon } from "@/components";
 import css from "./FilterItem.module.css";
 
 const FilterItem = ({
-                      id,
-                      value: { group, label, queryName, iconName },
-                      single = false,
-                    }) => {
+  id,
+  value: { group, label, queryName, iconName },
+  single = false,
+}) => {
   const { setFieldValue } = useFormikContext();
   const name = group || id;
   const [field] = useField(name);
 
-  // const isChecked = useMemo(
-  //   () => (single ? field.value === id : !!field.value),
-  //   [field.value, single, id]
-  // );
   const isChecked = Array.isArray(field.value) && field.value.includes(id);
 
   const handleClick = (e) => {
-    // console.log('CLICK');
-    // if (single) {
-    //   setFieldValue(name, isChecked ? "" : id);
-    // } else {
       if (isChecked) {
-        setFieldValue(name, field.value.filter((item) => item !== id));
+        setFieldValue(name, field.value.filter((item) => {
+          console.log(item);
+          return item !== id;
+        }));
       } else {
-        setFieldValue(name, [...(field.value || []), id]);
+        if (field.value instanceof Array) {
+          setFieldValue(name, [...(field.value || []), id]);
+        } else {
+          setFieldValue(name, []);
+        }
       }
-    // }
     e?.stopPropagation?.();
-  };
-
-  const handleKeyDown = (e) => {
-    // if (e.key === " " || e.key === "Enter") {
-    //   e.preventDefault();
-    //   handleClick(e);
-    // }
   };
 
   const inputProps = {
@@ -63,7 +54,6 @@ const FilterItem = ({
         role={inputProps.type}
         className={css.field}
         onClick={handleClick}
-        onKeyDown={handleKeyDown}
       />
       <label
         id={`${id}-label`}

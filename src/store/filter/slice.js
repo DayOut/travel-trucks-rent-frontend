@@ -6,7 +6,7 @@ const filtersSlice = createSlice({
   reducers: {
     setFilter(state, { payload }) {
       const parsedFilters = {};
-      console.log('payload', payload);
+      // console.log('payload', payload);
       for (const key in payload) {
         if (payload[key] === true) {
           parsedFilters[key] = true;
@@ -17,7 +17,7 @@ const filtersSlice = createSlice({
         }
       }
 
-      console.log(parsedFilters);
+      // console.log(parsedFilters);
       return { ...parsedFilters };
     },
   },

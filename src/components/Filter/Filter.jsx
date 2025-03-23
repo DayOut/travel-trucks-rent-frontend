@@ -9,7 +9,7 @@ import {
 } from "@/store/campers/selectors";
 import { selectLoading } from "@/store/campers/selectors";
 
-import {TextField, Button, Separator} from "@/components";
+import {TextField, Button} from "@/components";
 import FilterCategory from "./FiltersCategory/FilterCategory"
 
 import css from "./Filter.module.css";
@@ -26,6 +26,7 @@ const Filter = ({ onSubmit }) => {
 
   const handleSubmit = (values) => {
     const filteredValues = {};
+    console.log(values);
     for (const key in values) {
       if (key === values[key][0]) {
         filteredValues[key] = true;
@@ -33,6 +34,7 @@ const Filter = ({ onSubmit }) => {
         filteredValues[key] = values[key];
       }
     }
+    console.log(filteredValues);
     onSubmit(filteredValues);
   };
 
