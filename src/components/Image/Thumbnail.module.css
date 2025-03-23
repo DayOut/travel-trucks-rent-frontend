@@ -1,0 +1,15 @@
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-card-thumbnail);
+  object-fit: cover;
+}
+
+.zoom-in-pointer {
+  cursor: zoom-in;
+}
+
+.image-loader {
+  max-width: 25%;
+  max-height: 25%;
+}

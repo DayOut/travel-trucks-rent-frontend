@@ -1,0 +1,52 @@
+:has(.loader-wrapper) {
+  position: relative;
+}
+
+.loader-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button > .loader-wrapper {
+  width: 2em;
+  height: 2em;
+}
+
+.loader-wrapper > svg {
+  width: 100%;
+  height: 100%;
+}
+.loader-wrapper.primary > svg {
+  stroke: var(--color-white);
+}
+.loader-wrapper.secondary > svg {
+  stroke: var(--color-button-hover);
+}
+.loader-wrapper.current > svg {
+  stroke: currentColor;
+}
+
+.loader-wrapper svg > g {
+  transform: scale(0.97);
+}
+
+.loader-wrapper svg > g > g {
+  stroke-width: 3px;
+}
+
+.loader-wrapper circle {
+  width: 9rem;
+  height: 9rem;
+  stroke-width: 3px;
+}
+.loader-wrapper.primary circle {
+  stroke: var(--color-white);
+}
+.loader-wrapper.secondary circle {
+  stroke: var(--color-button);
+}
+.loader-wrapper.current circle {
+  stroke: currentColor;
+}

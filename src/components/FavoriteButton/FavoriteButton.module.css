@@ -1,0 +1,33 @@
+.favorite-btn {
+  width: fit-content;
+  height: fit-content;
+  line-height: 0;
+  border: none;
+  overflow: visible;
+  transition: transform 0.1s ease;
+}
+
+.favorite-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.favorite-btn:active {
+  transform: scale(0.9);
+}
+
+.is-favorite {
+  fill: var(--color-button);
+}
+
+.is-favorite:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.favorite-icon {
+  width: 1.625rem;
+  height: 1.5rem;
+}

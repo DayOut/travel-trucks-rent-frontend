@@ -1,0 +1,59 @@
+.wrapper {
+  position: relative;
+}
+
+.wrapper:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.card {
+  width: 112px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 8px;
+  border: 1px solid var(--color-gray-light);
+  cursor: pointer;
+  mix-blend-mode: multiply;
+  transition: border-color var(--transition-time)
+    var(--transition-timing-function);
+}
+
+.card-checkbox {
+  border-radius: var(--border-radius-filter-item-checkbox);
+}
+
+.card-radio-btn {
+  border-radius: var(--border-radius-filter-item-radio-btn);
+}
+
+.is-checked {
+  border-color: var(--color-button);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.label {
+  color: var(--color-main);
+  text-align: center;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--font-letter-spacing-tight);
+  text-transform: capitalize;
+}
+
+.field {
+  display: none;
+}
+
+.field:checked + .card {
+  border: 1px solid var(--color-button);
+}

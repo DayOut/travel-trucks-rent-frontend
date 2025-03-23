@@ -1,0 +1,52 @@
+.card-wrapper {
+  height: 368px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-normal);
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--border-radius-card);
+  background-color: var(--color-white);
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  width: 18.25rem;
+  height: 100%;
+  border-radius: var(--border-radius-card-thumbnail);
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  height: 100%;
+}
+
+.description-text {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.badges-list {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  gap: 0.5rem;
+  max-height: 100%;
+  border-radius: 4px;
+  outline: none;
+}
+
+.badges-list:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.badges-list:focus {
+  border: 2px solid var(--color-primary); /* Custom focus outline */
+}

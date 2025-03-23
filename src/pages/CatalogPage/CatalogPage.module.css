@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: unset;
+  align-items: flex-start;
+  gap: 64px;
+  margin-top: 72px;
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+
+.load-more-btn {
+  display: block;
+  margin: 40px auto 52px auto;
+}

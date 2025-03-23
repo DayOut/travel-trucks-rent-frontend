@@ -1,0 +1,43 @@
+.hero {
+  height: calc(100vh - 72px);
+  background-image: url("../../assets/images/hero-bg.webp");
+  background-color: var(--color-main);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (min-resolution: 192dpi) {
+  .hero {
+    background-image: url("../../assets/images/hero-bg@2x.webp");
+  }
+}
+
+.hero > :global(.container) {
+  height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+}
+
+.cta-wrapper {
+  color: var(--color-inputs);
+}
+
+.title-text {
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--line-height-large);
+}
+
+.display-text {
+  font-size: var(--font-size-display);
+}
+
+.subtitle {
+  margin-top: 16px;
+  font-size: var(--font-size-xxl);
+}
+
+.cta-btn {
+  width: 173px;
+  margin-top: 40px;
+}
