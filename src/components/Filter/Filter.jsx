@@ -26,7 +26,7 @@ const Filter = ({ onSubmit }) => {
 
   const handleSubmit = (values) => {
     const filteredValues = {};
-    console.log(values);
+    // console.log(values);
     for (const key in values) {
       if (key === values[key][0]) {
         filteredValues[key] = true;
@@ -34,7 +34,7 @@ const Filter = ({ onSubmit }) => {
         filteredValues[key] = values[key];
       }
     }
-    console.log(filteredValues);
+    // console.log(filteredValues);
     onSubmit(filteredValues);
   };
 
