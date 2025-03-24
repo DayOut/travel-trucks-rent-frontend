@@ -16,11 +16,9 @@ const FilterItem = ({
   const isChecked = field.value === "true" || (Array.isArray(field.value) && field.value.includes(id));
 
   const handleClick = (e) => {
-    console.log("field.value", field.value);
       if (isChecked) {
         if (field.value instanceof Array) {
           setFieldValue(name, field.value.filter((item) => {
-            // console.log(item);
             return item !== id;
           }));
         } else {
@@ -43,8 +41,6 @@ const FilterItem = ({
     "data-query": queryName,
     type: single ? "radio" : "checkbox",
   };
-
-  console.log("render FilterItem", id, "isChecked", isChecked, 'field.value', field.value, 'single', single);
 
   return (
     <div

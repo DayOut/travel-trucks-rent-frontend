@@ -13,8 +13,6 @@ const Modal = ({ isOpen, onClose, children }) => {
       if (e.key === "Escape") {
         onClose();
       }
-
-      // console.log(e.target);
     };
 
     if (isOpen) {
