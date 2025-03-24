@@ -3,9 +3,10 @@ import { Field, useFormikContext, useField } from "formik";
 
 import { FieldWrapper } from "@/components/UI";
 
-import css from "./TextField.module.css";
+import css from "./TextFilter.module.css";
+import {Separator} from "@/components/index.js";
 
-const TextField = ({
+const TextFilter = ({
   name,
   appendIcon,
   className,
@@ -19,6 +20,8 @@ const TextField = ({
 
   return (
     <div className={css["filter-group-wrapper"]}>
+      {label.length > 0 && <p className={css.title}>{label}</p>}
+      <Separator />
       <FieldWrapper
         value={field.value}
         clearable={clearable}
@@ -45,4 +48,4 @@ const TextField = ({
   );
 };
 
-export default TextField;
+export default TextFilter;

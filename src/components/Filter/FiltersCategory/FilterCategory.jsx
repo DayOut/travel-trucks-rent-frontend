@@ -6,7 +6,6 @@ import FilterItem from "../FilterItem/FilterItem"
 import css from "./FilterCategory.module.css";
 
 const FilterCategory = ({ title = "", items }) => {
-  // console.log('render FilterCategory');
   return (
     <div className={css["filter-group-wrapper"]}>
       {title.length > 0 && <p className={css.title}>{title}</p>}

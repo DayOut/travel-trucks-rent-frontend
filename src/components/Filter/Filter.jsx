@@ -9,10 +9,11 @@ import {
 } from "@/store/campers/selectors";
 import { selectLoading } from "@/store/campers/selectors";
 
-import {TextField, Button} from "@/components";
+import {Button} from "@/components";
 import FilterCategory from "./FiltersCategory/FilterCategory"
 
 import css from "./Filter.module.css";
+import TextFilter from "@/components/Filter/TextFilter/TextFilter.jsx";
 
 const Filter = ({ onSubmit }) => {
   const isLoading = useSelector(selectLoading);
@@ -26,15 +27,15 @@ const Filter = ({ onSubmit }) => {
 
   const handleSubmit = (values) => {
     const filteredValues = {};
-    // console.log(values);
     for (const key in values) {
       if (key === values[key][0]) {
         filteredValues[key] = true;
       } else if (key !== 'location') {
         filteredValues[key] = values[key];
+      } else if (key === 'location' && values[key] !== "") {
+        filteredValues[key] = values[key];
       }
     }
-    // console.log(filteredValues);
     onSubmit(filteredValues);
   };
 
@@ -87,7 +88,7 @@ const Filter = ({ onSubmit }) => {
         onSubmit={handleSubmit}
       >
         <Form className={css.form}>
-          <TextField
+          <TextFilter
             id={"location"}
             name={"location"}
             type={"text"}
